@@ -9,7 +9,6 @@ yarn-error.log*
 
 # Environment variables
 .env
-node_modules
 
 # OS-specific files
 .DS_Store
@@ -28,8 +27,6 @@ build/
 Dockerfile
 .dockerignore
 
-# Blaze engine dependencies
-blaze-engine/node_modules/
 
 # Miscellaneous
 *.bak
