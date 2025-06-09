@@ -1,0 +1,26 @@
+const BlazeCase = require("@blaze-case-ai/blaze-engine/core/case-type/blaze-case");
+
+class NewCaseTypeCase extends BlazeCase {
+  constructor() {
+    super(
+      "new-case-type",
+      "New Case Type",
+      [
+  {
+    "id": "stage1",
+    "label": "Stage 1",
+    "steps": [
+      {
+        "id": "step1",
+        "label": "Step 1",
+        "status": "pending",
+        "view": "summary"
+      }
+    ]
+  }
+]
+    );
+  }
+}
+
+module.exports = new NewCaseTypeCase();
