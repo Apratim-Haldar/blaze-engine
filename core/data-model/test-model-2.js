@@ -1,0 +1,2701 @@
+module.exports = {
+  id: 'test-model-2',
+  label: 'Test Model 2',
+  description: 'No description provided',
+  extends: 'address',
+  isEditable: true,
+  attributes: [
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "string",
+    label: "Start Date",
+    required: false,
+    unique: true,
+    allowedValues: [
+      "testing"
+    ]
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true,
+    allowedValues: []
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "street",
+    type: "string",
+    label: "Street",
+    required: true
+  },
+  {
+    id: "city",
+    type: "string",
+    label: "City",
+    required: true
+  },
+  {
+    id: "postalCode",
+    type: "string",
+    label: "Postal Code",
+    required: true,
+    validations: {
+      pattern: "^[0-9]{4,6}[A-Za-z]?$",
+      errorMessage: "Invalid postal code"
+    },
+    indexed: true
+  },
+  {
+    id: "country",
+    type: "string",
+    label: "Country",
+    defaultValue: "Netherlands",
+    allowedValues: [
+      "Netherlands",
+      "US",
+      "UK",
+      "India"
+    ]
+  },
+  {
+    id: "fullAddress",
+    type: "computed",
+    label: "Full Address",
+    dependencies: [
+      "street",
+      "city",
+      "postalCode",
+      "country"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "string",
+    label: "Start Date",
+    required: false,
+    unique: true,
+    allowedValues: [
+      "testing"
+    ]
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true,
+    allowedValues: []
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "street",
+    type: "string",
+    label: "Street",
+    required: true
+  },
+  {
+    id: "city",
+    type: "string",
+    label: "City",
+    required: true
+  },
+  {
+    id: "postalCode",
+    type: "string",
+    label: "Postal Code",
+    required: true,
+    validations: {
+      pattern: "^[0-9]{4,6}[A-Za-z]?$",
+      errorMessage: "Invalid postal code"
+    },
+    indexed: true
+  },
+  {
+    id: "country",
+    type: "string",
+    label: "Country",
+    defaultValue: "Netherlands",
+    allowedValues: [
+      "Netherlands",
+      "US",
+      "UK",
+      "India"
+    ]
+  },
+  {
+    id: "fullAddress",
+    type: "computed",
+    label: "Full Address",
+    dependencies: [
+      "street",
+      "city",
+      "postalCode",
+      "country"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "string",
+    label: "Start Date",
+    required: false,
+    unique: true,
+    allowedValues: [
+      "testing"
+    ]
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true,
+    allowedValues: []
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1,
+    indexed: true
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "id",
+    type: "string",
+    label: "ID",
+    required: true,
+    unique: true,
+    indexed: true
+  },
+  {
+    id: "description",
+    type: "string",
+    label: "Description",
+    defaultValue: ""
+  },
+  {
+    id: "startDate",
+    type: "date",
+    label: "Start Date",
+    required: true
+  },
+  {
+    id: "endDate",
+    type: "date",
+    label: "End Date"
+  },
+  {
+    id: "createdBy",
+    type: "string",
+    label: "Created By",
+    accessControl: {
+      read: [
+        "admin"
+      ],
+      write: [
+        "admin"
+      ]
+    }
+  },
+  {
+    id: "createdAt",
+    type: "datetime",
+    label: "Created At"
+  },
+  {
+    id: "status",
+    type: "string",
+    label: "Status",
+    defaultValue: "draft",
+    allowedValues: [
+      "draft",
+      "active",
+      "inactive",
+      "archived"
+    ],
+    transitions: {
+      draft: [
+        "active"
+      ],
+      active: [
+        "inactive",
+        "archived"
+      ],
+      inactive: [
+        "active"
+      ]
+    },
+    transitionHooks: {
+      active: "onActivate",
+      archived: "onArchive"
+    }
+  },
+  {
+    id: "version",
+    type: "number",
+    label: "Version",
+    defaultValue: 1
+  },
+  {
+    id: "createdAge",
+    type: "computed",
+    label: "Age (days)",
+    dependencies: [
+      "createdAt"
+    ]
+  },
+  {
+    id: "street",
+    type: "string",
+    label: "Street",
+    required: true
+  },
+  {
+    id: "city",
+    type: "string",
+    label: "City",
+    required: true
+  },
+  {
+    id: "postalCode",
+    type: "string",
+    label: "Postal Code",
+    required: true,
+    validations: {
+      pattern: "^[0-9]{4,6}[A-Za-z]?$",
+      errorMessage: "Invalid postal code"
+    },
+    indexed: true
+  },
+  {
+    id: "country",
+    type: "string",
+    label: "Country",
+    defaultValue: "Netherlands",
+    allowedValues: [
+      "Netherlands",
+      "US",
+      "UK",
+      "India"
+    ]
+  },
+  {
+    id: "fullAddress",
+    type: "computed",
+    label: "Full Address",
+    dependencies: [
+      "street",
+      "city",
+      "postalCode",
+      "country"
+    ]
+  }
+]
+  ,
+  hooks: {}
+};
