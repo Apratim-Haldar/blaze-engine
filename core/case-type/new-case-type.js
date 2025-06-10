@@ -4,17 +4,18 @@ class NewCaseTypeCase extends BlazeCase {
   constructor() {
     super(
       "new-case-type",
-      "New Case Type",
+      "new case type",
       [
   {
-    "id": "stage1",
+    "id": "stage-1",
     "label": "Stage 1",
     "steps": [
       {
-        "id": "step1",
+        "id": "step-1",
         "label": "Step 1",
-        "status": "pending",
-        "view": "summary"
+        "status": "development",
+        "view": "dev",
+        "type": "manual"
       }
     ]
   }
