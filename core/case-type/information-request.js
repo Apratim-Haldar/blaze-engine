@@ -53,7 +53,7 @@ class InformationRequestCase extends BlazeCase {
         "type": "manual"
       }
     ]
-  },
+  }
 ]
     );
   }
