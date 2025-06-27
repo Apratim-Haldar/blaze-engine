@@ -17,6 +17,10 @@ const caseRoute = require("./node_modules/@blaze-case-ai/blaze-engine/server/rou
 const componentRoute = require("./node_modules/@blaze-case-ai/blaze-engine/server/route/component-route");
 const dataModelRoute = require('./node_modules/@blaze-case-ai/blaze-engine/server/route/data-model-route');
 
+const authRoutes = require("./node_modules/@blaze-case-ai/blaze-engine/server/controller/auth-controller");
+const requireAuth = require("./node_modules/@blaze-case-ai/blaze-engine/server/middleware/auth-middleware");
+
+
 // MongoDB connection
 const dbURI = "mongodb://localhost:27017"; // Replace with your MongoDB connection string
 mongoose
@@ -37,10 +41,11 @@ app.get("/", (req, res) => {
 
 app.use("/src", express.static(path.join(__dirname, "client/src")));
 app.use(express.json());
-app.use("/api", caseTypeRoute);
+app.use("/auth", authRoutes);
+app.use("/api",  caseTypeRoute);
 app.use("/api", caseRoute);
 app.use("/api", componentRoute);
-app.use('/api', dataModelRoute);
+app.use("/api",  dataModelRoute);
 
 // Enable CORS for http://localhost:5173
 
